@@ -1,0 +1,11 @@
+﻿<Application x:Class="SoundStudio.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:SoundStudio"
+             StartupUri="Authorization.xaml">
+    <Application.Resources>
+        <SolidColorBrush x:Key="ColorAccent" Color="LightSkyBlue"/>
+        <SolidColorBrush x:Key="ColorSecondary" Color="LightCyan"/>
+        <SolidColorBrush x:Key="ColorPrimary" Color="White"/>
+    </Application.Resources>
+</Application>
