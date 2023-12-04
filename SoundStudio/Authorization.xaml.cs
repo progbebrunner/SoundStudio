@@ -27,17 +27,18 @@ namespace SoundStudio
 
         private void txtLogin_TextChanged(object sender, TextChangedEventArgs e)
         {
-
+            txtError.Text = "";
         }
 
         private void txtPsw_TextChanged(object sender, TextChangedEventArgs e)
         {
-
+            txtError.Text = "";
         }
 
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
 
         }
+
     }
 }
