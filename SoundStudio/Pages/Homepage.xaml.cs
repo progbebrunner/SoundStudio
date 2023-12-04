@@ -13,32 +13,28 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace SoundStudio
+namespace SoundStudio.Pages
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Логика взаимодействия для Homepage.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class Homepage : Page
     {
-        public MainWindow()
+        public Homepage()
         {
             InitializeComponent();
+            AppsLoad();
         }
 
-        private void txtLogin_TextChanged(object sender, TextChangedEventArgs e)
+        public void AppsLoad()
         {
-            txtError.Text = "";
+            var apps = App.Context.Applications.ToList();
+            LVApps.ItemsSource = null;
+            LVApps.ItemsSource = apps;
+            if (LVApps.Items.Count == 0)
+            {
+                txtError.Text = "Ничего не найдено";
+            }
         }
-
-        private void txtPsw_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            txtError.Text = "";
-        }
-
-        private void btnLogin_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
     }
 }

@@ -13,5 +13,7 @@ namespace SoundStudio
     /// </summary>
     public partial class App : Application
     {
+        public static SSEntities Context { get; } = new SSEntities();
+        public static Users CurrentUser = null;
     }
 }

@@ -10,22 +10,27 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-
+        
         <StackPanel Grid.Row="0">
-            <TextBlock Margin="0 69 0 0" FontSize="36" HorizontalAlignment="Center">
+            <TextBlock Margin="0 30 0 0" FontSize="36" HorizontalAlignment="Center">
+                Авторизация
+            </TextBlock>
+            <TextBlock Margin="0 30 0 0" FontSize="28" HorizontalAlignment="Center">
                 ЛОГИН
             </TextBlock>
             <TextBox x:Name="txtLogin" Margin="0 10 0 0" HorizontalAlignment="Center" TextAlignment="Center" 
-                     TextChanged="txtLogin_TextChanged" Width="222" FontSize="36"/>
-            <TextBlock Margin="0 30 0 0" FontSize="36" HorizontalAlignment="Center">
+                     TextChanged="txtLogin_TextChanged" Width="222" FontSize="28"/>
+            <TextBlock Margin="0 30 0 0" FontSize="28" HorizontalAlignment="Center">
                 ПАРОЛЬ
             </TextBlock>
-            <TextBox x:Name="txtPsw" Margin="0 10 0 0" HorizontalAlignment="Center" TextAlignment="Center" 
-                     TextChanged="txtPsw_TextChanged" Width="222" FontSize="36"/>
+            <PasswordBox x:Name="txtPsw" Margin="0 10 0 0" HorizontalAlignment="Center" HorizontalContentAlignment="Center" 
+                     PasswordChanged="txtPsw_PasswordChanged" Width="222" FontSize="28"/>
             <TextBlock x:Name="txtError" Margin="0 10 0 0" HorizontalAlignment="Center" TextAlignment="Center" 
-                       Foreground="Red" Width="222" FontSize="33" TextWrapping="Wrap"/>
+                       Foreground="Red" Width="222" FontSize="24" TextWrapping="Wrap"/>
             <Button x:Name="btnLogin" Click="btnLogin_Click" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Content="ВОЙТИ"
-                    FontSize="44" Width="222" Background="{StaticResource ColorSecondary}"/>
+                    Margin="0 10 0 0" FontSize="28" Width="222" Background="{StaticResource ColorSecondary}" BorderBrush="Transparent"/>
+            <Button x:Name="btnLoginGuest" Click="btnLoginGuest_Click" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Content="ВОЙТИ КАК ГОСТЬ"
+                    Margin="0 10 0 0" FontSize="22" Width="222" Background="Transparent" BorderBrush="Transparent"/>
         </StackPanel>
     </Grid>
 </Window>
