@@ -10,7 +10,14 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="75"/>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="50"/>
+            <RowDefinition Height="75"/>
         </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" Text="" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="36"/>
+        <TextBlock Text="{Binding ElementName=FrameGuest, Path=Content.Title}" HorizontalAlignment="Center" FontSize="36"/>
+        <Frame Grid.Row="1" Name="FrameGuest" NavigationUIVisibility="Hidden" ContentRendered="FrameGuest_ContentRendered" 
+               HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <Button Grid.Row="2" x:Name="btnBack" Content="назад" Click="btnBack_Click" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="36"
+                Background="Transparent" BorderBrush="Transparent"/>
     </Grid>
 </Window>

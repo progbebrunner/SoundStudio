@@ -50,6 +50,8 @@ namespace SoundStudio
                     if (user_log[0].password.ToString() == txtPsw.Password.ToString())
                     {
 
+                        var currentUser = App.Context.Users.Where(u => u.login == txtLogin.Text).FirstOrDefault();
+                        App.CurrentUser = currentUser;
                         if (user_log[0].role == 2)
                         {
                             AdminWindow adminWindow = new AdminWindow();
@@ -69,7 +71,7 @@ namespace SoundStudio
                             }
                         }
                         Window.GetWindow(this).Close();
-                        NavigationService.GetNavigationService(new Homepage());
+                        //NavigationService.GetNavigationService(new Homepage());
                     }
                     else
                     {

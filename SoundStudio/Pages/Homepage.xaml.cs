@@ -22,7 +22,7 @@ namespace SoundStudio.Pages
     {
         public Homepage()
         {
-            InitializeComponent();
+            InitializeComponent();         
             AppsLoad();
         }
 
@@ -35,6 +35,12 @@ namespace SoundStudio.Pages
             {
                 txtError.Text = "Ничего не найдено";
             }
+            
+        }
+
+        private void btnEdit_Click(object sender, RoutedEventArgs e)
+        {
+            
         }
     }
 }

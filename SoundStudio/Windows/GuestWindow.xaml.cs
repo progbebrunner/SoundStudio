@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using SoundStudio.Pages;
 
 namespace SoundStudio.Windows
 {
@@ -22,6 +23,23 @@ namespace SoundStudio.Windows
         public GuestWindow()
         {
             InitializeComponent();
+            if (FrameGuest.CanGoBack)
+            {
+                btnBack.Visibility = Visibility.Visible;
+            }
+            else { btnBack.Visibility = Visibility.Collapsed; }
+            FrameGuest.Navigate(new Homepage());
+        }
+
+        private void btnBack_Click(object sender, RoutedEventArgs e)
+        {
+            if (FrameGuest.CanGoBack)
+                FrameGuest.GoBack();
+        }
+
+        private void FrameGuest_ContentRendered(object sender, EventArgs e)
+        {
+
         }
     }
 }

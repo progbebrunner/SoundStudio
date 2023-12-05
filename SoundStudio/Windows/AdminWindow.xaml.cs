@@ -23,6 +23,11 @@ namespace SoundStudio.Windows
         public AdminWindow()
         {
             InitializeComponent();
+            if (FrameAdmin.CanGoBack)
+            {
+                btnBack.Visibility = Visibility.Visible;
+            }
+            else { btnBack.Visibility = Visibility.Collapsed; }
             FrameAdmin.Navigate(new Homepage());
         }
 
@@ -31,10 +36,15 @@ namespace SoundStudio.Windows
             
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void btnBack_Click(object sender, RoutedEventArgs e)
         {
             if (FrameAdmin.CanGoBack)
-                    FrameAdmin.GoBack();
+                FrameAdmin.GoBack();
+        }
+
+        private void btnExit_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

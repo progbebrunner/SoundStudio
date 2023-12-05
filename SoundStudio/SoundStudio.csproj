@@ -79,12 +79,6 @@
     <Compile Include="Roles.cs">
       <DependentUpon>SSModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="sp_helpdiagramdefinition_Result.cs">
-      <DependentUpon>SSModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="sp_helpdiagrams_Result.cs">
-      <DependentUpon>SSModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="SSModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -99,9 +93,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>SSModel.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="sysdiagrams.cs">
-      <DependentUpon>SSModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Users.cs">
       <DependentUpon>SSModel.tt</DependentUpon>
@@ -175,6 +166,52 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Resources\UsersImgs\basic.png" />
+    <Resource Include="Resources\UsersImgs\first.jpg" />
+    <Resource Include="Resources\UsersImgs\second.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\UsersImgs\animal collective.jpg" />
+    <Resource Include="Resources\UsersImgs\aphex twin.jpg" />
+    <Resource Include="Resources\UsersImgs\beach boys.jpg" />
+    <Resource Include="Resources\UsersImgs\black sabbath.jpg" />
+    <Resource Include="Resources\UsersImgs\brian eno.jpg" />
+    <Resource Include="Resources\UsersImgs\burial.jpg" />
+    <Resource Include="Resources\UsersImgs\burzum.jpg" />
+    <Resource Include="Resources\UsersImgs\charles mingus.jpg" />
+    <Resource Include="Resources\UsersImgs\daft punk.jpg" />
+    <Resource Include="Resources\UsersImgs\danny brown.jpg" />
+    <Resource Include="Resources\UsersImgs\david bowie.jpg" />
+    <Resource Include="Resources\UsersImgs\death grips.jpg" />
+    <Resource Include="Resources\UsersImgs\dr dre.jpg" />
+    <Resource Include="Resources\UsersImgs\frank sinatra.jpg" />
+    <Resource Include="Resources\UsersImgs\gorillaz.jpg" />
+    <Resource Include="Resources\UsersImgs\herbie hancock.jpg" />
+    <Resource Include="Resources\UsersImgs\john coltrane.jpg" />
+    <Resource Include="Resources\UsersImgs\justice.jpg" />
+    <Resource Include="Resources\UsersImgs\kendrick lamar.jpg" />
+    <Resource Include="Resources\UsersImgs\king crimson.jpg" />
+    <Resource Include="Resources\UsersImgs\krafwerk.jpg" />
+    <Resource Include="Resources\UsersImgs\mac demarco.jpg" />
+    <Resource Include="Resources\UsersImgs\madvillain.jpg" />
+    <Resource Include="Resources\UsersImgs\massive attack.jpg" />
+    <Resource Include="Resources\UsersImgs\megadeth.jpg" />
+    <Resource Include="Resources\UsersImgs\metallica.jpg" />
+    <Resource Include="Resources\UsersImgs\mf doom.jpg" />
+    <Resource Include="Resources\UsersImgs\miles davis.jpg" />
+    <Resource Include="Resources\UsersImgs\my bloody valentine.jpg" />
+    <Resource Include="Resources\UsersImgs\neutral milk hotel.jpg" />
+    <Resource Include="Resources\UsersImgs\nirvana.jpg" />
+    <Resource Include="Resources\UsersImgs\outkast.jpg" />
+    <Resource Include="Resources\UsersImgs\pink floyd.jpg" />
+    <Resource Include="Resources\UsersImgs\radiohead.jpg" />
+    <Resource Include="Resources\UsersImgs\ryo fukui.jpg" />
+    <Resource Include="Resources\UsersImgs\talking heads.jpg" />
+    <Resource Include="Resources\UsersImgs\tangerine dream.jpg" />
+    <Resource Include="Resources\UsersImgs\the avalanches.jpg" />
+    <Resource Include="Resources\UsersImgs\the beatles.jpg" />
+    <Resource Include="Resources\UsersImgs\the velvet underground.jpg" />
+    <Resource Include="Resources\UsersImgs\weezer.jpg" />
     <Content Include="SSModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>SSModel.edmx</DependentUpon>
@@ -186,6 +223,5 @@
       <LastGenOutput>SSModel.cs</LastGenOutput>
     </Content>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

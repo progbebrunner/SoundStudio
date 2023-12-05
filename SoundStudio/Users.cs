@@ -21,6 +21,7 @@ namespace SoundStudio
         }
     
         public int id_user { get; set; }
+        public string user_img { get; set; }
         public string login { get; set; }
         public string password { get; set; }
         public Nullable<int> role { get; set; }

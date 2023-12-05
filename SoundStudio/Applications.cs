@@ -11,15 +11,68 @@ namespace SoundStudio
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.Linq;
+    using System.IO;
+
     public partial class Applications
     {
+        public string path = Path.Combine(Directory.GetParent(Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).FullName)).FullName, @"Resources\UsersImgs\");
+
         public int id_app { get; set; }
         public Nullable<int> client { get; set; }
         public Nullable<int> app_type { get; set; }
         public Nullable<int> quantity { get; set; }
         public Nullable<int> app_status { get; set; }
-    
+
+        public string new_client
+        {
+            get
+            {
+
+                var users = App.Context.Users.ToList();
+                var user = users.Where(u => u.id_user == client).FirstOrDefault();
+                return user.login;
+            }
+        }
+
+        public string new_app_type
+        {
+            get
+            {
+                var types = App.Context.ApplicationTypes.ToList();
+                var type = types.Where(t => t.id_apptype == app_type).FirstOrDefault();
+                return type.app_type;
+            }
+        }
+
+        public string new_app_status
+        {
+            get
+            {
+                var statuses = App.Context.ApplicationStatuses.ToList();
+                var status = statuses.Where(s => s.id_appstatus == app_status).FirstOrDefault();
+                return status.app_status;
+            }
+        }
+
+        public string new_img
+        {
+            get
+            {
+                var users = App.Context.Users.ToList();
+                var user = users.Where(u => u.id_user == client).FirstOrDefault();
+
+                if (File.Exists(path + user.user_img))
+                {
+                    return path + user.user_img;
+                }
+                else
+                {
+                    return path + "basic.png";
+                }
+            }
+        }
+
         public virtual ApplicationStatuses ApplicationStatuses { get; set; }
         public virtual ApplicationTypes ApplicationTypes { get; set; }
         public virtual Users Users { get; set; }
