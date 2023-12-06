@@ -28,6 +28,10 @@ namespace SoundStudio.Windows
                 btnBack.Visibility = Visibility.Visible;
             }
             else { btnBack.Visibility = Visibility.Collapsed; }
+            if (FrameGuest.Content.ToString() == "SoundStudio.Pages.AddEditApps") 
+            { 
+                btnAdd.Visibility = Visibility.Hidden;
+            }
             FrameGuest.Navigate(new Homepage());
         }
 
@@ -40,6 +44,19 @@ namespace SoundStudio.Windows
         private void FrameGuest_ContentRendered(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnExit_Click(object sender, RoutedEventArgs e)
+        {
+            App.CurrentUser = null;
+            AuthorizathionWindow authorizathionWindow = new AuthorizathionWindow();
+            authorizathionWindow.Show();
+            this.Close();
+        }
+
+        private void btnAdd_Click(object sender, RoutedEventArgs e)
+        {
+            FrameGuest.Navigate(new AddEditPage());
         }
     }
 }

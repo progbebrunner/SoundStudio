@@ -8,9 +8,9 @@
         Title="Клиент" Height="900" Width="1200">
     <Grid Background="{StaticResource ColorAccent}">
         <Grid.RowDefinitions>
-            <RowDefinition Height="75"/>
+            <RowDefinition Height="100"/>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="75"/>
+            <RowDefinition Height="100"/>
         </Grid.RowDefinitions>
 
         <TextBlock Grid.Row="0" Text="" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="36"/>
@@ -18,6 +18,10 @@
         <Frame Grid.Row="1" Name="FrameGuest" NavigationUIVisibility="Hidden" ContentRendered="FrameGuest_ContentRendered" 
                HorizontalAlignment="Center" VerticalAlignment="Center"/>
         <Button Grid.Row="2" x:Name="btnBack" Content="назад" Click="btnBack_Click" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="36"
-                Background="Transparent" BorderBrush="Transparent"/>
+                Padding="10" Margin="10" Background="{StaticResource ColorSecondary}" BorderBrush="Transparent"/>
+        <Button Grid.Row="2" x:Name="btnExit" Content="выйти" Click="btnExit_Click" VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="36"
+                Padding="10" Margin="10" Background="{StaticResource ColorSecondary}" BorderBrush="Transparent"/>
+        <Button Grid.Row="2" x:Name="btnAdd" Content="добавить" Click="btnAdd_Click" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="36"
+                Padding="10" Margin="10" Background="{StaticResource ColorSecondary}" BorderBrush="Transparent"/>
     </Grid>
 </Window>

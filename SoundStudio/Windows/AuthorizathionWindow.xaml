@@ -5,8 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SoundStudio.Windows"
         mc:Ignorable="d"
-        Title="AuthorizathionWindow" Height="450" Width="800">
-    <Grid>
-        
+        Title="Авторизация" Height="900" Width="1200" MinHeight="600" MinWidth="800">
+    <Grid Background="{StaticResource ColorAccent}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="75"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="75"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" Text="" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="36"/>
+        <TextBlock Text="{Binding ElementName=FrameAuthoriz, Path=Content.Title}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="44"/>
+        <Frame Grid.Row="1" Name="FrameAuthoriz" NavigationUIVisibility="Hidden" HorizontalAlignment="Center" VerticalAlignment="Center"/>
     </Grid>
 </Window>

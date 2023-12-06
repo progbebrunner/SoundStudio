@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SoundStudio.Pages;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,6 +23,8 @@ namespace SoundStudio.Windows
         public AuthorizathionWindow()
         {
             InitializeComponent();
+            FrameAuthoriz.Navigate(new Authorization());
         }
     }
+
 }

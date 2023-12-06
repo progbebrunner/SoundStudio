@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -28,6 +29,10 @@ namespace SoundStudio.Windows
                 btnBack.Visibility = Visibility.Visible;
             }
             else { btnBack.Visibility = Visibility.Collapsed; }
+            if (FrameAdmin.Content.ToString() == "SoundStudio.Pages.AddEditApps")
+            {
+                btnAdd.Visibility = Visibility.Hidden;
+            }
             FrameAdmin.Navigate(new Homepage());
         }
 
@@ -44,7 +49,18 @@ namespace SoundStudio.Windows
 
         private void btnExit_Click(object sender, RoutedEventArgs e)
         {
+            if(App.CurrentUser != null)
+            {
+                App.CurrentUser = null;
+                AuthorizathionWindow authorizathionWindow = new AuthorizathionWindow();
+                authorizathionWindow.Show();
+                this.Close();
+            }
+        }
 
+        private void btnAdd_Click(object sender, RoutedEventArgs e)
+        {
+            FrameAdmin.Navigate(new AddEditPage());
         }
     }
 }

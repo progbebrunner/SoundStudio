@@ -1,10 +1,8 @@
-﻿using System;
+﻿using SoundStudio.Windows;
+using System;
 using System.Collections.Generic;
-using System.Data;
-using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
-using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -15,28 +13,17 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using SoundStudio.Windows;
-using SoundStudio.Pages;
 
-namespace SoundStudio
+namespace SoundStudio.Pages
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Логика взаимодействия для Authorization.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class Authorization : Page
     {
-        public MainWindow()
+        public Authorization()
         {
             InitializeComponent();
-        }
-
-        private void txtLogin_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            txtError.Text = "";
-        }
-        private void txtPsw_PasswordChanged(object sender, RoutedEventArgs e)
-        {
-            txtError.Text = "";
         }
 
         private void btnLogin_Click(object sender, RoutedEventArgs e)
@@ -87,13 +74,21 @@ namespace SoundStudio
             {
                 MessageBox.Show(ex.Message);
             }
-    }
+        }
 
         private void btnLoginGuest_Click(object sender, RoutedEventArgs e)
         {
 
         }
 
-        
+        private void txtLogin_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            txtError.Text = "";
+        }
+
+        private void txtPsw_PasswordChanged(object sender, RoutedEventArgs e)
+        {
+            txtError.Text = "";
+        }
     }
 }
