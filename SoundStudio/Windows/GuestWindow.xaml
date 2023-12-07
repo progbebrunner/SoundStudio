@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SoundStudio.Windows"
         mc:Ignorable="d"
-        Title="Клиент" Height="900" Width="1200">
+        Title="Клиент" MinHeight="900" Width="1200">
     <Grid Background="{StaticResource ColorAccent}">
         <Grid.RowDefinitions>
             <RowDefinition Height="100"/>

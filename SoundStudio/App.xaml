@@ -7,9 +7,18 @@
         <SolidColorBrush x:Key="ColorAccent" Color="LightSkyBlue"/>
         <SolidColorBrush x:Key="ColorSecondary" Color="LightCyan"/>
         <SolidColorBrush x:Key="ColorPrimary" Color="White"/>
-
+        
         <Style TargetType="TextBlock" x:Key="TBLV">
-            <Setter Property="Width" Value="300"/>
+            <Setter Property="Width" Value="240"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="TextWrapping" Value="Wrap"/>
+            <Setter Property="TextAlignment" Value="Center"/>
+            <Setter Property="FontSize" Value="30"/>
+            <Setter Property="FontFamily" Value="Gill Sans MT"/>
+        </Style>
+        <Style TargetType="TextBox" x:Key="TBXLV">
+            <Setter Property="Width" Value="239.9"/>
             <Setter Property="HorizontalAlignment" Value="Center"/>
             <Setter Property="VerticalAlignment" Value="Center"/>
             <Setter Property="TextWrapping" Value="Wrap"/>
@@ -18,7 +27,7 @@
             <Setter Property="FontFamily" Value="Gill Sans MT"/>
         </Style>
         <Style TargetType="TextBlock" x:Key="TBHeader">
-            <Setter Property="Margin" Value="5"/>
+            <Setter Property="Margin" Value="20"/>
             <Setter Property="HorizontalAlignment" Value="Center"/>
             <Setter Property="VerticalAlignment" Value="Center"/>
             <Setter Property="TextWrapping" Value="Wrap"/>

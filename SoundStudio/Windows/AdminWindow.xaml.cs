@@ -28,8 +28,8 @@ namespace SoundStudio.Windows
             {
                 btnBack.Visibility = Visibility.Visible;
             }
-            else { btnBack.Visibility = Visibility.Collapsed; }
-            if (FrameAdmin.Content.ToString() == "SoundStudio.Pages.AddEditApps")
+            else { btnBack.Visibility = Visibility.Hidden; }
+            if (FrameAdmin.DataContext != null && FrameAdmin.DataContext.ToString() == "SoundStudio.Pages.AddEditApps")
             {
                 btnAdd.Visibility = Visibility.Hidden;
             }
@@ -60,7 +60,7 @@ namespace SoundStudio.Windows
 
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
-            FrameAdmin.Navigate(new AddEditPage());
+            FrameAdmin.Navigate(new AddEditPage(0));
         }
     }
 }

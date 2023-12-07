@@ -23,7 +23,7 @@ namespace SoundStudio
         public Nullable<int> app_type { get; set; }
         public Nullable<int> quantity { get; set; }
         public Nullable<int> app_status { get; set; }
-
+        
         public string new_client
         {
             get
@@ -42,6 +42,15 @@ namespace SoundStudio
                 var types = App.Context.ApplicationTypes.ToList();
                 var type = types.Where(t => t.id_apptype == app_type).FirstOrDefault();
                 return type.app_type;
+            }
+        }
+
+        public int price
+        {
+            get
+            {
+                var type = App.Context.ApplicationTypes.Where(t => t.id_apptype == app_type).FirstOrDefault();
+                return Int32.Parse(quantity.ToString()) * Int32.Parse(type.cost.ToString());
             }
         }
 
@@ -72,6 +81,8 @@ namespace SoundStudio
                 }
             }
         }
+
+        
 
         public virtual ApplicationStatuses ApplicationStatuses { get; set; }
         public virtual ApplicationTypes ApplicationTypes { get; set; }

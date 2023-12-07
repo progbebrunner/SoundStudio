@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:SoundStudio.Pages"
       mc:Ignorable="d" 
-      d:DesignHeight="900" d:DesignWidth="1200"
+      d:DesignHeight="900" d:DesignWidth="1200" MinWidth="1205"
       Title="Главная страница">
 
     <Grid Background="{StaticResource ColorAccent}">
@@ -14,28 +14,43 @@
             <RowDefinition Height="800"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="300"/>
-            <ColumnDefinition Width="300"/>
-            <ColumnDefinition Width="300"/>
-            <ColumnDefinition Width="300"/>
+            <ColumnDefinition Width="240"/>
+            <ColumnDefinition Width="240"/>
+            <ColumnDefinition Width="240"/>
+            <ColumnDefinition Width="240"/>
+            <ColumnDefinition Width="240"/>
         </Grid.ColumnDefinitions>
         <TextBlock Grid.Column="0" Text="Клиент" Style="{StaticResource TBHeader}" Width="auto"/>
-        <TextBlock Grid.Column="1" Text="Тип заявки" Style="{StaticResource TBHeader}" Width="auto"/>
+        <TextBlock Grid.Column="1" Text="Заявки" Style="{StaticResource TBHeader}" Width="auto"/>
         <TextBlock Grid.Column="2" Text="Количество" Style="{StaticResource TBHeader}" Width="auto"/>
-        <TextBlock Grid.Column="3" Text="Статус заявки" Style="{StaticResource TBHeader}" Width="auto"/>
-        <ListView x:Name="LVApps" Grid.Row="1" Grid.ColumnSpan="4" Background="Transparent" BorderBrush="Transparent" HorizontalAlignment="Center">
+        <TextBlock Grid.Column="3" Text="Стоимость" Style="{StaticResource TBHeader}" Width="auto"/>
+        <TextBlock Grid.Column="4" Text="Статус" Style="{StaticResource TBHeader}" Width="auto"/>
+        <ListView x:Name="LVApps" Grid.Row="1" Grid.ColumnSpan="5" Background="Transparent" BorderBrush="Transparent" HorizontalAlignment="Center" d:ItemsSource="{d:SampleData ItemCount=5}">
+            <ListView.ContextMenu>
+                <ContextMenu>
+                    <MenuItem x:Name="cmEdit" Header="Редактировать" Click="cmEdit_Click"/>
+                    <MenuItem x:Name="cmDelete" Header="Удалить" Click="cmDelete_Click"/>
+                </ContextMenu>
+            </ListView.ContextMenu>
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <Grid>
+                    <Grid x:Name="SecondGrid">                        
                         <StackPanel Orientation="Horizontal" CanVerticallyScroll="True">
                             <StackPanel Orientation="Vertical">
                                 <Image x:Name="ImageService" Width="200" Height="200" Source="{Binding new_img}"/>
                                 <TextBlock Text="{Binding new_client}" Style="{StaticResource TBLV}"/>
                             </StackPanel>
-                            <TextBlock Text="{Binding new_app_type}" Style="{StaticResource TBLV}"/>
+                            <StackPanel Orientation="Vertical" VerticalAlignment="Center">
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock x:Name="txtID" Text="№" Style="{StaticResource TBLV}" Width="120"/>
+                                    <TextBlock Text="{Binding id_app}" Style="{StaticResource TBLV}" Width="120"/>
+                                </StackPanel>
+                                <TextBlock Text="{Binding new_app_type}" Style="{StaticResource TBLV}"/>
+                            </StackPanel>
+                            
                             <TextBlock Text="{Binding quantity}" Style="{StaticResource TBLV}"/>
+                            <TextBlock Text="{Binding price}" Style="{StaticResource TBLV}"/>
                             <TextBlock Text="{Binding new_app_status}" Style="{StaticResource TBLV}"/>
-                            <Button x:Name="btnEdit" Content="Редактировать"/>
                         </StackPanel>
                     </Grid>
                 </DataTemplate>

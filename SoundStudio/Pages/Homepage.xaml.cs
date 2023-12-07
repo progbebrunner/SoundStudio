@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using SoundStudio.Windows;
 
 namespace SoundStudio.Pages
 {
@@ -28,9 +29,19 @@ namespace SoundStudio.Pages
 
         public void AppsLoad()
         {
-            var apps = App.Context.Applications.ToList();
-            LVApps.ItemsSource = null;
-            LVApps.ItemsSource = apps;
+            if (App.CurrentUser.id_user == 2)
+            {
+                var apps = App.Context.Applications.ToList();
+                LVApps.ItemsSource = null;
+                LVApps.ItemsSource = apps;
+            }
+            else
+            {
+                var apps = App.Context.Applications.Where(a => a.client == App.CurrentUser.id_user) .ToList();
+                LVApps.ItemsSource = null;
+                LVApps.ItemsSource = apps;
+            }
+            
             if (LVApps.Items.Count == 0)
             {
                 txtError.Text = "Ничего не найдено";
@@ -38,9 +49,26 @@ namespace SoundStudio.Pages
             
         }
 
-        private void btnEdit_Click(object sender, RoutedEventArgs e)
+        private void cmDelete_Click(object sender, RoutedEventArgs e)
+        {
+            var x = sender as StackPanel;
+            
+            int id_app = 1;
+            var apps = App.Context.Applications.ToList();
+            var currentApp = apps.Where(a => a.id_app == id_app).FirstOrDefault();
+            if (MessageBox.Show($"Вы точно хотите удалить альбом?",
+                "Внимание", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)
+            {
+                App.Context.Applications.Remove(currentApp);
+                App.Context.SaveChanges();
+                MessageBox.Show("Альбом был удален");
+            }
+        }
+
+        private void cmEdit_Click(object sender, RoutedEventArgs e)
         {
             
+            //NavigationService.Navigate(new AddEditPage());
         }
     }
 }

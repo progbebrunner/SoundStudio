@@ -48,12 +48,12 @@ namespace SoundStudio.Pages
                         {
                             if (user_log[0].role.ToString().Trim() == "")
                             {
-                                GuestWindow gWindow = new GuestWindow();
+                                GuestWindow gWindow = new GuestWindow(1);
                                 gWindow.Show();
                             }
                             else
                             {
-                                GuestWindow gWindow = new GuestWindow();
+                                GuestWindow gWindow = new GuestWindow(1);
                                 gWindow.Show();
                             }
                         }
@@ -78,7 +78,8 @@ namespace SoundStudio.Pages
 
         private void btnLoginGuest_Click(object sender, RoutedEventArgs e)
         {
-
+            GuestWindow gWindow = new GuestWindow(0);
+            gWindow.Show();
         }
 
         private void txtLogin_TextChanged(object sender, TextChangedEventArgs e)
