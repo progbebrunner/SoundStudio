@@ -21,16 +21,16 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <TextBlock Name="txtIdApp" Text="Номер заявки" Style="{StaticResource TBHeader}" FontSize="44"/>
+        <TextBlock Name="txtIdApp" Text="Номер заявки" Style="{StaticResource TBLV}" FontSize="44" Width="auto"/>
         <TextBlock Grid.Column="1" Name="txtIdAppNum" Style="{StaticResource TBHeader}" FontSize="44"/>
-        <TextBlock Grid.Row="1" Name="txtClient" Text="Клиент" Style="{StaticResource TBHeader}" FontSize="44"/>
+        <TextBlock Grid.Row="1" Name="txtClient" Text="Клиент" Style="{StaticResource TBLV}" FontSize="44"/>
         <ComboBox  Grid.Row="1" Grid.Column="1" Name="cbClients" Style="{StaticResource cbAddEdit}"/>
-        <TextBlock Grid.Row="2" Name="txtType" Text="Услуга" Style="{StaticResource TBHeader}" FontSize="44"/>
+        <TextBlock Grid.Row="2" Name="txtType" Text="Услуга" Style="{StaticResource TBLV}" FontSize="44"/>
         <ComboBox Grid.Row="2" Grid.Column="1" Name="cbTypes" Style="{StaticResource cbAddEdit}"/>
-        <TextBlock Grid.Row="3" Text="Количество" Style="{StaticResource TBHeader}" FontSize="44"/>
-        <TextBox Grid.Row="3" Grid.Column="1" Background="Transparent" FontSize="55" TextAlignment="Center"/>
-        <TextBlock Grid.Row="4" Name="txtStatus" Text="Статус" Style="{StaticResource TBHeader}" FontSize="44"/>
-        <ComboBox Grid.Row="4" Grid.Column="1" Name="cbStatuses" Style="{StaticResource cbAddEdit}"/>
+        <TextBlock Grid.Row="3" Text="Количество" Style="{StaticResource TBLV}" FontSize="44"/>
+        <TextBox Grid.Row="3" Grid.Column="1" x:Name="txtQuantuty" Margin="10" Background="Transparent" FontSize="55" TextAlignment="Center"/>
+        <TextBlock Grid.Row="4" Name="txtStatus" Text="Статус" Style="{StaticResource TBLV}" FontSize="44"/>
+        <ComboBox Grid.Row="4" Grid.Column="1" Name="cbStatuses" Style="{StaticResource cbAddEdit}" />
         <Button Grid.Row="5" Grid.ColumnSpan="2" x:Name="btnSave" Content="сохранить" Click="btnSave_Click" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="55"
         Padding="10" Background="{StaticResource ColorSecondary}" BorderBrush="Transparent"/>
     </Grid>

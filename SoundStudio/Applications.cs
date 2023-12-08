@@ -82,7 +82,20 @@ namespace SoundStudio
             }
         }
 
-        
+        public string btn_visibility
+        {
+            get
+            {
+                if (App.CurrentUser.role == 1)
+                {
+                    return "Hidden";
+                }
+                else
+                {
+                    return "Visible";
+                }
+            }
+        }
 
         public virtual ApplicationStatuses ApplicationStatuses { get; set; }
         public virtual ApplicationTypes ApplicationTypes { get; set; }

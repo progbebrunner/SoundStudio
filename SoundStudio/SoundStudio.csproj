@@ -73,8 +73,8 @@
     <Compile Include="ApplicationTypes.cs">
       <DependentUpon>SSModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Pages\AddEditApps.xaml.cs">
-      <DependentUpon>AddEditApps.xaml</DependentUpon>
+    <Compile Include="Pages\AddEditPage.xaml.cs">
+      <DependentUpon>AddEditPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Authorization.xaml.cs">
       <DependentUpon>Authorization.xaml</DependentUpon>
@@ -115,7 +115,7 @@
     <Compile Include="Windows\GuestWindow.xaml.cs">
       <DependentUpon>GuestWindow.xaml</DependentUpon>
     </Compile>
-    <Page Include="Pages\AddEditApps.xaml">
+    <Page Include="Pages\AddEditPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

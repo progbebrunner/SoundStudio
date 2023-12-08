@@ -23,11 +23,11 @@ namespace SoundStudio.Windows
         public GuestWindow(int x)
         {
             InitializeComponent();
-            if (FrameGuest.CanGoBack)
-            {
-                btnBack.Visibility = Visibility.Visible;
-            }
-            else { btnBack.Visibility = Visibility.Collapsed; }
+            //if (FrameGuest.CanGoBack)
+            //{
+            //    btnBack.Visibility = Visibility.Visible;
+            //}
+            //else { btnBack.Visibility = Visibility.Collapsed; }
             if (FrameGuest.Content != null && FrameGuest.Content.ToString() == "SoundStudio.Pages.AddEditApps") 
             { 
                 btnAdd.Visibility = Visibility.Hidden;
@@ -63,7 +63,7 @@ namespace SoundStudio.Windows
 
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
-            FrameGuest.Navigate(new AddEditPage(0));
+            FrameGuest.Navigate(new AddEditPage());
         }
     }
 }

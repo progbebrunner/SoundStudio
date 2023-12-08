@@ -23,7 +23,7 @@ namespace SoundStudio.Pages
     {
         public Homepage()
         {
-            InitializeComponent();         
+            InitializeComponent();
             AppsLoad();
         }
 
@@ -44,31 +44,38 @@ namespace SoundStudio.Pages
             
             if (LVApps.Items.Count == 0)
             {
-                txtError.Text = "Ничего не найдено";
+                txtError.Visibility= Visibility.Visible;
+                txtError.Text = "Заявок нет";
             }
             
         }
 
-        private void cmDelete_Click(object sender, RoutedEventArgs e)
+        private void cmEdit_Click(object sender, RoutedEventArgs e)
+        {            
+            var app_id = (sender as MenuItem);
+            MessageBox.Show(app_id.DataContext.ToString());
+
+            //NavigationService.Navigate(new AddEditPage());
+        }
+
+        private void btnEdit_Click(object sender, RoutedEventArgs e)
         {
-            var x = sender as StackPanel;
-            
-            int id_app = 1;
-            var apps = App.Context.Applications.ToList();
-            var currentApp = apps.Where(a => a.id_app == id_app).FirstOrDefault();
-            if (MessageBox.Show($"Вы точно хотите удалить альбом?",
+            var button = sender as Button;
+            var app = button.DataContext as Applications;
+            NavigationService.Navigate(new AddEditPage(app));
+        }
+
+        private void btnDelete_Click(object sender, RoutedEventArgs e)
+        {
+            var button = sender as Button;
+            var currentApp = button.DataContext as Applications;
+            if (MessageBox.Show($"Вы точно хотите удалить эту заявку?",
                 "Внимание", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)
             {
                 App.Context.Applications.Remove(currentApp);
                 App.Context.SaveChanges();
-                MessageBox.Show("Альбом был удален");
+                MessageBox.Show("Заявка была удалена");
             }
-        }
-
-        private void cmEdit_Click(object sender, RoutedEventArgs e)
-        {
-            
-            //NavigationService.Navigate(new AddEditPage());
         }
     }
 }
