@@ -52,8 +52,8 @@ namespace SoundStudio.Windows
             if(App.CurrentUser != null)
             {
                 App.CurrentUser = null;
-                AuthorizathionWindow authorizathionWindow = new AuthorizathionWindow();
-                authorizathionWindow.Show();
+                AuthorizationWindow authorizationwindow = new AuthorizationWindow();
+                authorizationwindow.Show();
                 this.Close();
             }
         }
@@ -61,6 +61,11 @@ namespace SoundStudio.Windows
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
             FrameAdmin.Navigate(new AddEditPage());
+        }
+
+        private void Image_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            FrameAdmin.Navigate(new Homepage());
         }
     }
 }

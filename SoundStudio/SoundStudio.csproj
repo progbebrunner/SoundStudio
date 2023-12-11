@@ -34,6 +34,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>SoundStudio Icon.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
@@ -109,8 +112,8 @@
     <Compile Include="Windows\AdminWindow.xaml.cs">
       <DependentUpon>AdminWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Windows\AuthorizathionWindow.xaml.cs">
-      <DependentUpon>AuthorizathionWindow.xaml</DependentUpon>
+    <Compile Include="Windows\AuthorizationWindow.xaml.cs">
+      <DependentUpon>AuthorizationWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\GuestWindow.xaml.cs">
       <DependentUpon>GuestWindow.xaml</DependentUpon>
@@ -139,7 +142,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Windows\AuthorizathionWindow.xaml">
+    <Page Include="Windows\AuthorizationWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -232,6 +235,10 @@
     <Resource Include="Resources\UsersImgs\the beatles.jpg" />
     <Resource Include="Resources\UsersImgs\the velvet underground.jpg" />
     <Resource Include="Resources\UsersImgs\weezer.jpg" />
+    <Resource Include="Resources\SoundStudio Icon.ico" />
+    <Resource Include="SoundStudio Icon.ico" />
+    <Resource Include="Resources\Headphone Logo.ico" />
+    <Resource Include="Resources\Logo.png" />
     <Content Include="SSModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>SSModel.edmx</DependentUpon>

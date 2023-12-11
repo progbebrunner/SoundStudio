@@ -16,14 +16,21 @@ using System.Windows.Shapes;
 namespace SoundStudio.Windows
 {
     /// <summary>
-    /// Логика взаимодействия для AuthorizathionWindow.xaml
+    /// Логика взаимодействия для authorizationwindow.xaml
     /// </summary>
-    public partial class AuthorizathionWindow : Window
+    public partial class AuthorizationWindow : Window
     {
-        public AuthorizathionWindow()
+        public AuthorizationWindow()
         {
             InitializeComponent();
             FrameAuthoriz.Navigate(new Authorization());
+        }
+
+        private void btnLoginGuest_Click(object sender, RoutedEventArgs e)
+        {
+            GuestWindow gWindow = new GuestWindow(0);
+            gWindow.Show();
+            GetWindow(this).Close();
         }
     }
 

@@ -56,8 +56,8 @@ namespace SoundStudio.Windows
         private void btnExit_Click(object sender, RoutedEventArgs e)
         {
             App.CurrentUser = null;
-            AuthorizathionWindow authorizathionWindow = new AuthorizathionWindow();
-            authorizathionWindow.Show();
+            AuthorizationWindow authorizationwindow = new AuthorizationWindow();
+            authorizationwindow.Show();
             this.Close();
         }
 

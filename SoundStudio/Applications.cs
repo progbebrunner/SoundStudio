@@ -96,6 +96,14 @@ namespace SoundStudio
                 }
             }
         }
+        public string userName
+        {
+            get
+            {
+
+                return App.Context.Users.Where(u => u.id_user == client).First().login;
+            }
+        }
 
         public virtual ApplicationStatuses ApplicationStatuses { get; set; }
         public virtual ApplicationTypes ApplicationTypes { get; set; }

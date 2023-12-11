@@ -11,8 +11,8 @@
     <Grid Background="{StaticResource ColorAccent}">
         <Grid.RowDefinitions>
             <RowDefinition Height="100"/>
-            <RowDefinition Height="50"/>
-            <RowDefinition Height="750"/>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="700"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="240"/>
@@ -21,11 +21,29 @@
             <ColumnDefinition Width="230"/>
             <ColumnDefinition Width="230"/>
         </Grid.ColumnDefinitions>
-        <TextBlock Grid.Column="0" Text="Клиент" Style="{StaticResource TBHeader}" Width="auto"/>
-        <TextBlock Grid.Column="1" Text="Заявки" Style="{StaticResource TBHeader}" Width="auto"/>
-        <TextBlock Grid.Column="2" Text="Количество" Style="{StaticResource TBHeader}" Width="auto"/>
-        <TextBlock Grid.Column="3" Text="Стоимость" Style="{StaticResource TBHeader}" Width="auto"/>
-        <TextBlock Grid.Column="4" Text="Статус" Style="{StaticResource TBHeader}" Width="auto"/>
+        <StackPanel Grid.ColumnSpan="5" Orientation="Horizontal" HorizontalAlignment="Center">
+            <TextBox x:Name="tbxSearch" Style="{StaticResource TBXHomepage}" TextChanged="tbxSearch_TextChanged"/>
+            <ComboBox Name="cbSortNumCl" Style="{StaticResource cbHomepage}" SelectionChanged="cb_SelectionChanged">
+                <ComboBoxItem Content="№: по возрастанию"/>
+                <ComboBoxItem Content="№: по убыванию"/>
+                <ComboBoxItem Content="Клиент: А - Я"/>
+                <ComboBoxItem Content="Клиент: Я - А"/>
+            </ComboBox>
+            <ComboBox x:Name="cbChooseType" Style="{StaticResource cbHomepage}" SelectionChanged="cb_SelectionChanged">
+                <ComboBoxItem Content="Все услуги"/>
+                <ComboBoxItem Content="Аренда студии"/>
+                <ComboBoxItem Content="Продюсирование"/>
+                <ComboBoxItem Content="Мастеринг"/>
+                <ComboBoxItem Content="Монтаж"/>
+                <ComboBoxItem Content="Консультация"/>
+            </ComboBox>
+        </StackPanel>
+
+        <TextBlock Grid.Row="1" Grid.Column="0" Text="Клиент" Style="{StaticResource TBHeader}" Width="auto"/>
+        <TextBlock Grid.Row="1" Grid.Column="1" Text="Заявки" Style="{StaticResource TBHeader}" Width="auto"/>
+        <TextBlock Grid.Row="1" Grid.Column="2" Text="Количество" Style="{StaticResource TBHeader}" Width="auto"/>
+        <TextBlock Grid.Row="1" Grid.Column="3" Text="Стоимость" Style="{StaticResource TBHeader}" Width="auto"/>
+        <TextBlock Grid.Row="1" Grid.Column="4" Text="Статус" Style="{StaticResource TBHeader}" Width="auto"/>
         <ListView x:Name="LVApps" Grid.Row="2" Grid.ColumnSpan="5" Background="Transparent" BorderBrush="Transparent" HorizontalAlignment="Center" d:ItemsSource="{d:SampleData ItemCount=3}">
             <ListView.ItemTemplate>
                 <DataTemplate>
@@ -55,7 +73,7 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-        <TextBlock x:Name="txtError" Margin="0 10 0 0" Grid.Row="1" Grid.ColumnSpan="5" HorizontalAlignment="Center" TextAlignment="Center" 
+        <TextBlock x:Name="txtError" Margin="0 10 0 0" Grid.Row="2" Grid.ColumnSpan="5" HorizontalAlignment="Center" TextAlignment="Center" 
                        Foreground="Red" Width="222" FontSize="44" TextWrapping="Wrap" Visibility="Hidden"/>
     </Grid>
 </Page>
