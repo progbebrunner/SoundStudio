@@ -31,11 +31,6 @@
             </ComboBox>
             <ComboBox x:Name="cbChooseType" Style="{StaticResource cbHomepage}" SelectionChanged="cb_SelectionChanged">
                 <ComboBoxItem Content="Все услуги"/>
-                <ComboBoxItem Content="Аренда студии"/>
-                <ComboBoxItem Content="Продюсирование"/>
-                <ComboBoxItem Content="Мастеринг"/>
-                <ComboBoxItem Content="Монтаж"/>
-                <ComboBoxItem Content="Консультация"/>
             </ComboBox>
         </StackPanel>
 

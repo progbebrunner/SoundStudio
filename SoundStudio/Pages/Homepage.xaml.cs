@@ -25,11 +25,18 @@ namespace SoundStudio.Pages
         public Homepage()
         {
             InitializeComponent();
-            AppsLoad();
+            var types = App.Context.ApplicationTypes.Select(x => x.app_type).ToList();
+            foreach (var type in types)
+            {
+                cbChooseType.Items.Add(type);
+            }
+            cbChooseType.SelectedIndex = 0;
+            cbSortNumCl.SelectedIndex = 0;
         }
 
         public void AppsLoad()
         {
+            
             txtError.Visibility = Visibility.Hidden;
             List<Applications> apps;
             if (App.CurrentUser.id_user == 2)
@@ -43,7 +50,7 @@ namespace SoundStudio.Pages
             switch (cbChooseType.SelectedIndex)
             {
                 case 0:
-                    
+                    apps = App.Context.Applications.ToList();
                     break;
                 case 1:
                     apps = apps.Where(a => a.app_type == 1).ToList();
@@ -60,7 +67,7 @@ namespace SoundStudio.Pages
                 case 5:
                     apps = apps.Where(a => a.app_type == 5).ToList();
                     break;
-                
+
             }
             switch (cbSortNumCl.SelectedIndex)
             {
@@ -108,6 +115,7 @@ namespace SoundStudio.Pages
                 App.Context.SaveChanges();
                 MessageBox.Show("Заявка была удалена");
             }
+            AppsLoad();
         }
 
         private void cb_SelectionChanged(object sender, SelectionChangedEventArgs e)
