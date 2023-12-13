@@ -74,5 +74,6 @@
             <Setter Property="VerticalContentAlignment" Value="Center"/>
             <Setter Property="HorizontalContentAlignment" Value="Center"/>
         </Style>
+        <Style TargetType="TextBox" x:Key="ForGit"/>
     </Application.Resources>
 </Application>
