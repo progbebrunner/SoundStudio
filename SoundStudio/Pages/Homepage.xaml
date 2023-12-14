@@ -35,7 +35,7 @@
         </StackPanel>
 
         <TextBlock Grid.Row="1" Grid.Column="0" Text="Клиент" Style="{StaticResource TBHeader}" Width="auto"/>
-        <TextBlock Grid.Row="1" Grid.Column="1" Text="Заявки" Style="{StaticResource TBHeader}" Width="auto"/>
+        <TextBlock Grid.Row="1" Grid.Column="1" Text="Заявка" Style="{StaticResource TBHeader}" Width="auto"/>
         <TextBlock Grid.Row="1" Grid.Column="2" Text="Количество" Style="{StaticResource TBHeader}" Width="auto"/>
         <TextBlock Grid.Row="1" Grid.Column="3" Text="Стоимость" Style="{StaticResource TBHeader}" Width="auto"/>
         <TextBlock Grid.Row="1" Grid.Column="4" Text="Статус" Style="{StaticResource TBHeader}" Width="auto"/>
