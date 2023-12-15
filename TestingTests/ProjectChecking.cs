@@ -29,8 +29,7 @@ namespace Testing.Tests
         [TestMethod()]
         public void ValidateLgnPswTest2()
         {
-            lgn = "1";
-            psw = "1";
+            lgn = "1"; psw = "1";
 
             answer = Testing.ProjectChecking.ValidateUser(lgn, psw);
             Assert.IsTrue(answer);
@@ -39,8 +38,7 @@ namespace Testing.Tests
         [TestMethod()]
         public void ValidateLgnPswTest3() 
         {
-            lgn = "1";
-            psw = "";
+            lgn = "1"; psw = "";
 
             answer = Testing.ProjectChecking.ValidateUser(lgn, psw);
             Assert.IsFalse(answer);

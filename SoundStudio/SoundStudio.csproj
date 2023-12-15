@@ -241,6 +241,7 @@
     <Resource Include="Resources\Logo.png" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Resources\UsersImgs\literally me.jpg" />
     <Content Include="SSModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>SSModel.edmx</DependentUpon>
