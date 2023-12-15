@@ -169,6 +169,8 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="Docs\Притчин 50-02. Отчёт по УП 02.docx" />
+    <None Include="Docs\Притчин 50-02. Отчёт по УП 02.pptx" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
