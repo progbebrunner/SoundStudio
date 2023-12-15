@@ -24,8 +24,8 @@
                 <DataTemplate>
                     <Grid>
                         <StackPanel Orientation="Horizontal" CanVerticallyScroll="True">
-                            <TextBlock Text="{Binding app_type}" Style="{StaticResource TBLV}" Width="700"/>
-                            <TextBlock Text="{Binding cost}" Style="{StaticResource TBLV}" Width="500"/>
+                            <TextBlock Text="{Binding app_type}" Style="{StaticResource TBLV}" Width="700" TextAlignment="Left"/>
+                            <TextBlock Text="{Binding cost}" Style="{StaticResource TBLV}"/>
                         </StackPanel>
                     </Grid>
                 </DataTemplate>

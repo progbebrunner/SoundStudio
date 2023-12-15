@@ -14,6 +14,7 @@ namespace SoundStudio
     using System.Linq;
     using System.IO;
 
+
     public partial class Applications
     {
         public string path = Path.Combine(Directory.GetParent(Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).FullName)).FullName, @"Resources\UsersImgs\");
@@ -23,7 +24,7 @@ namespace SoundStudio
         public Nullable<int> app_type { get; set; }
         public Nullable<int> quantity { get; set; }
         public Nullable<int> app_status { get; set; }
-        
+
         public string new_client
         {
             get

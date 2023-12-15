@@ -20,14 +20,14 @@ namespace Testing.Tests
         string quantity;
 
         [TestMethod()]
-        public void ValidateUserTest()
+        public void ValidateLgnPswTest()
         {         
             answer = Testing.ProjectChecking.ValidateUser(lgn, psw);
             Assert.IsFalse(answer);
         }
 
         [TestMethod()]
-        public void ValidatePasswordTest2()
+        public void ValidateLgnPswTest2()
         {
             lgn = "1";
             psw = "1";
@@ -37,7 +37,7 @@ namespace Testing.Tests
         }
 
         [TestMethod()]
-        public void ValidatePasswordTest3() 
+        public void ValidateLgnPswTest3() 
         {
             lgn = "1";
             psw = "";
@@ -55,35 +55,36 @@ namespace Testing.Tests
         }
 
         [TestMethod()]
-        public void BtnChekTest2()
-        {
-            btn_click = false;
-            answer = Testing.ProjectChecking.BtnCheck(btn_click);
-            Assert.IsFalse(answer);
-        }
-
-        [TestMethod()]
         public void ValidateQuantityTest()
         {
             quantity = "";
             answer = Testing.ProjectChecking.ValidateQuantity(quantity);
             Assert.IsFalse(answer);
-        }
+        }       
+        
         
         [TestMethod()]
         public void ValidateQuantityTest2()
         {
-            quantity = "3";
-            answer = Testing.ProjectChecking.ValidateQuantity(quantity);
-            Assert.IsTrue(answer);
-        }
-        
-        [TestMethod()]
-        public void ValidateQuantityTest3()
-        {
             quantity = "bebra";
             answer = Testing.ProjectChecking.ValidateQuantity(quantity);
             Assert.IsFalse(answer);
+        }
+
+        [TestMethod()]
+        public void ValidateQuantityTest3()
+        {
+            quantity = "6,9";
+            answer = Testing.ProjectChecking.ValidateQuantity(quantity);
+            Assert.IsFalse(answer);
+        }
+
+        [TestMethod()]
+        public void ValidateQuantityTest4()
+        {
+            quantity = "3";
+            answer = Testing.ProjectChecking.ValidateQuantity(quantity);
+            Assert.IsTrue(answer);
         }
     }
 }

@@ -239,6 +239,8 @@
     <Resource Include="SoundStudio Icon.ico" />
     <Resource Include="Resources\Headphone Logo.ico" />
     <Resource Include="Resources\Logo.png" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="SSModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>SSModel.edmx</DependentUpon>

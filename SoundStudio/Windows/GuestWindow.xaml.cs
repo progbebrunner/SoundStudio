@@ -20,14 +20,10 @@ namespace SoundStudio.Windows
     /// </summary>
     public partial class GuestWindow : Window
     {
+        int role;
         public GuestWindow(int x)
         {
             InitializeComponent();
-            //if (FrameGuest.CanGoBack)
-            //{
-            //    btnBack.Visibility = Visibility.Visible;
-            //}
-            //else { btnBack.Visibility = Visibility.Collapsed; }
             if (FrameGuest.Content != null && FrameGuest.Content.ToString() == "SoundStudio.Pages.AddEditApps") 
             { 
                 btnAdd.Visibility = Visibility.Hidden;
@@ -40,6 +36,7 @@ namespace SoundStudio.Windows
             {
                 FrameGuest.Navigate(new Homepage());
             }
+            role = x;
         }
 
         private void btnBack_Click(object sender, RoutedEventArgs e)
@@ -64,6 +61,14 @@ namespace SoundStudio.Windows
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
             FrameGuest.Navigate(new AddEditPage());
+        }
+
+        private void Image_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if(role != 0)
+            {
+                FrameGuest.Navigate(new Homepage());
+            }
         }
     }
 }

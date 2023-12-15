@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:SoundStudio.Pages"
       mc:Ignorable="d" 
-      d:DesignHeight="900" d:DesignWidth="1200" MinWidth="1205"
+      d:DesignHeight="900" d:DesignWidth="1200" MinWidth="1200"
       Title="Главная страница">
 
     <Grid Background="{StaticResource ColorAccent}">
@@ -35,7 +35,7 @@
         </StackPanel>
 
         <TextBlock Grid.Row="1" Grid.Column="0" Text="Клиент" Style="{StaticResource TBHeader}" Width="auto"/>
-        <TextBlock Grid.Row="1" Grid.Column="1" Text="Заявки" Style="{StaticResource TBHeader}" Width="auto"/>
+        <TextBlock Grid.Row="1" Grid.Column="1" Text="Заявка" Style="{StaticResource TBHeader}" Width="auto"/>
         <TextBlock Grid.Row="1" Grid.Column="2" Text="Количество" Style="{StaticResource TBHeader}" Width="auto"/>
         <TextBlock Grid.Row="1" Grid.Column="3" Text="Стоимость" Style="{StaticResource TBHeader}" Width="auto"/>
         <TextBlock Grid.Row="1" Grid.Column="4" Text="Статус" Style="{StaticResource TBHeader}" Width="auto"/>
@@ -61,8 +61,8 @@
                         </StackPanel>
                         
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                            <Button x:Name="btnEdit" Click="btnEdit_Click" Content="Редактировать" Style="{StaticResource LVBEdit}" Visibility="{Binding btn_visibility}"/>
-                            <Button x:Name="btnDelete" Click="btnDelete_Click" Content="Удалить" Style="{StaticResource LVBEdit}" Visibility="{Binding btn_visibility}"/>
+                            <Button x:Name="btnEdit" Click="btnEdit_Click" Content="редактировать" Style="{StaticResource LVBEdit}" Visibility="{Binding btn_visibility}"/>
+                            <Button x:Name="btnDelete" Click="btnDelete_Click" Content="удалить" Style="{StaticResource LVBEdit}" Visibility="{Binding btn_visibility}"/>
                         </StackPanel>
                     </StackPanel>
                 </DataTemplate>

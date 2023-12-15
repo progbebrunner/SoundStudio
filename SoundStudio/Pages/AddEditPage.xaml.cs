@@ -128,5 +128,15 @@ namespace SoundStudio.Pages
             }
 
         }
+
+        private void txtQuantuty_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (Int32.TryParse(txtQuantuty.Text, out int x) == true && cbTypes.SelectedItem.ToString() != "")
+            {
+                var type = App.Context.ApplicationTypes.Where(t => t.app_type == cbTypes.SelectedItem.ToString()).FirstOrDefault();
+                Amountcount.Text = (int.Parse(txtQuantuty.Text) * type.cost).ToString();
+            }
+
+        }
     }
 }

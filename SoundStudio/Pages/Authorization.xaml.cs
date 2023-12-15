@@ -48,7 +48,6 @@ namespace SoundStudio.Pages
                             }
                         }
                         Window.GetWindow(this).Close();
-                        //NavigationService.GetNavigationService(new Homepage());
                     }
                     else
                     {

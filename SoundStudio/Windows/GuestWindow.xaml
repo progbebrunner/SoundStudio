@@ -5,14 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SoundStudio.Windows"
         mc:Ignorable="d"
-        Title="Клиент" MinHeight="900" Width="1200">
+        Title="Гость" MinHeight="900" Width="1200">
     <Grid Background="{StaticResource ColorAccent}">
         <Grid.RowDefinitions>
             <RowDefinition Height="100"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="100"/>
         </Grid.RowDefinitions>
-
+        <Image Source="/Resources/logo.png" MouseDown="Image_MouseDown" HorizontalAlignment="Left" Margin="10"/>
         <TextBlock Grid.Row="0" Text="" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="36"/>
         <TextBlock Text="{Binding ElementName=FrameGuest, Path=Content.Title}" HorizontalAlignment="Center" FontSize="36"/>
         <Frame Grid.Row="1" Name="FrameGuest" NavigationUIVisibility="Hidden" ContentRendered="FrameGuest_ContentRendered" 

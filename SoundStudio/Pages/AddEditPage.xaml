@@ -15,11 +15,12 @@
             <RowDefinition MinHeight="110"/>
             <RowDefinition MinHeight="110"/>
             <RowDefinition MinHeight="110"/>
+            <RowDefinition MinHeight="110"/>
             <RowDefinition MinHeight="100"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
+            <ColumnDefinition Width="400"/>
+            <ColumnDefinition Width="750"/>
         </Grid.ColumnDefinitions>
         <TextBlock Name="txtIdApp" Text="Номер заявки" Style="{StaticResource TBLV}" FontSize="44" Width="auto"/>
         <TextBlock Grid.Column="1" Name="txtIdAppNum" Style="{StaticResource TBHeader}" FontSize="44"/>
@@ -28,10 +29,13 @@
         <TextBlock Grid.Row="2" Name="txtType" Text="Услуга" Style="{StaticResource TBLV}" FontSize="44"/>
         <ComboBox Grid.Row="2" Grid.Column="1" Name="cbTypes" Style="{StaticResource cbAddEdit}"/>
         <TextBlock Grid.Row="3" Text="Количество" Style="{StaticResource TBLV}" FontSize="44"/>
-        <TextBox Grid.Row="3" Grid.Column="1" x:Name="txtQuantuty" Margin="10" Background="Transparent" FontSize="55" TextAlignment="Center"/>
-        <TextBlock Grid.Row="4" Name="txtStatus" Text="Статус" Style="{StaticResource TBLV}" FontSize="44"/>
-        <ComboBox Grid.Row="4" Grid.Column="1" Name="cbStatuses" Style="{StaticResource cbAddEdit}" />
-        <Button Grid.Row="5" Grid.ColumnSpan="2" x:Name="btnSave" Content="сохранить" Click="btnSave_Click" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="55"
+        <TextBox Grid.Row="3" Grid.Column="1" x:Name="txtQuantuty" Margin="10" Background="Transparent" FontSize="55" HorizontalAlignment="Center" 
+                  VerticalAlignment="Center" MinWidth="333" TextAlignment="Center" TextChanged="txtQuantuty_TextChanged"/>
+        <TextBlock Grid.Row="4" Name="txtAmount" Text="Сумма" Style="{StaticResource TBLV}" FontSize="44"/>
+        <TextBlock Grid.Row="4" Grid.Column="1" Name="Amountcount" Text="-------------" Style="{StaticResource TBLV}" FontSize="44"/>
+        <TextBlock Grid.Row="5" Name="txtStatus" Text="Статус" Style="{StaticResource TBLV}" FontSize="44"/>
+        <ComboBox Grid.Row="5" Grid.Column="1" Name="cbStatuses" Style="{StaticResource cbAddEdit}" />
+        <Button Grid.Row="6" Grid.ColumnSpan="2" x:Name="btnSave" Content="сохранить" Click="btnSave_Click" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="55"
         Padding="10" Background="{StaticResource ColorSecondary}" BorderBrush="Transparent"/>
     </Grid>
 </Page>
